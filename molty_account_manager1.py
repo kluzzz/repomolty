@@ -297,13 +297,18 @@ def get_account_info(api_key: str) -> tuple:
     data = _do_request("get", "/accounts/me", api_key=api_key)
     print("DEBUG DATA:", data)
 
-    if data.get("success"):
-        return data.get("data"), None
-    else:
+    if not data:
+        print("API ERROR: kosong")
+        return None, "No response"
+
+    if not data.get("success"):
+        print("API ERROR FULL:", data)
         err = data.get("error", {})
-        msg = f"{err.get('message','Unknown')} (code: {err.get('code','?')}, HTTP: {data.get('_status','?')})"
-        print("ERROR MSG:", msg)
+        msg = f"{err.get('message', 'Unknown')} (code: {err.get('code', '?')})"
         return None, msg
+
+    return data.get("data"), None
+
 
 
 # ─────────────────────────────────────────────
