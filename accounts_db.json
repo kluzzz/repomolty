@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "created_at": "2026-03-17T16:05:22.820611Z",
+    "last_updated": "2026-03-17T16:50:50.464832Z",
+    "total_accounts": 1,
+    "description": "Molty Royale Account Database",
+    "db_path": "c:\\Users\\62821\\Desktop\\AOU\\accounts_db.json"
+  },
+  "accounts": [
+    {
+      "accountId": "37b71970-37e4-4fc6-9e02-7e7d005e52c0",
+      "name": "heavenface",
+      "apiKey": "mr_live_rkf51yNJUbeNwscbgBCLg93xZ-s1QJm2",
+      "verificationCode": "",
+      "walletAddress": "0x244185d977f83C6B49d2a5752DE8F65b995a6AC5",
+      "walletSynced": true,
+      "balance": 0,
+      "crossBalanceWei": "0",
+      "totalGames": 0,
+      "totalWins": 0,
+      "currentGames": [],
+      "createdAt": "2026-03-17T16:09:35.654Z",
+      "lastUpdated": "2026-03-17T16:50:50.464330Z",
+      "notes": ""
+    }
+  ]
+}
