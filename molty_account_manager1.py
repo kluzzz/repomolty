@@ -238,7 +238,15 @@ def _do_request(method: str, endpoint: str, payload: dict = None, api_key: str =
             except Exception:
                 return {"success": False, "error": {"message": f"Response bukan JSON: {res.text[:100]}", "code": "PARSE_ERROR"}, "_status": res.status_code}
 
-            return {"_status": res.status_code, **body}
+            # 🔥 SAFE GUARD
+            if not isinstance(body, dict):
+                print("INVALID RESPONSE:", body)
+                return {"success": False, "error": {"message": "Invalid response"}}
+
+            if "success" not in body:
+                body["success"] = False
+
+            return body
 
         except requests.exceptions.ConnectionError as e:
             last_err = str(e)
